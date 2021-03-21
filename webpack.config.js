@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: './src/app.js',
@@ -11,6 +12,13 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader"
+                ]
+            },
+            {
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader'
             },
@@ -18,7 +26,7 @@ module.exports = {
                 test: /\.(scss)$/,
                 use: [{
                     // inject CSS to page
-                    loader: 'style-loader'
+                    loader: MiniCssExtractPlugin.loader
                     }, {
                         // translates CSS into CommonJS modules
                         loader: 'css-loader'
@@ -42,17 +50,29 @@ module.exports = {
                         loader: 'sass-loader'
                     }]
             },
-            {
-                test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
-            }
         ]
     },
-    plugins: [new HtmlWebpackPlugin({
-        inject: "body",
-        template: "public/index.html",
-        filename: "index.html"
-    })],
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+        }),
+        new HtmlWebpackPlugin({
+            inject: "body",
+            template: "public/index.html",
+            filename: "index.html"
+        }),
+        new HtmlWebpackPlugin({
+            inject: "body",
+            template: "public/mobile.html",
+            filename: "mobile.html"
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: "public/static", to: "static" },
+            ],
+        }),
+    ],
     devServer: {
         contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'dist')],
         compress: true,

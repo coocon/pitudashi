@@ -8,9 +8,9 @@ body {
     padding: 0;
 }
 .main {
-    width: 1024px;
     margin: 0 auto;
     background: #fff;
+    width: 1024px;
 
     .header {
         width: 1024px;
@@ -128,6 +128,123 @@ body {
         font-size: 14px;
         p {
             margin: 0 80px;
+            a {
+                color: #b9b9b9;
+            }
+        }
+    }
+}
+
+
+
+.main-mobile {
+
+    width: 100%;
+    max-width: 440px;
+    .bg {
+        width: 100%;
+        min-height: 500px;
+    }
+    margin: 0 auto;
+    padding: 15px;
+    background: #fff;
+
+    .header {
+        margin: 30px auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: #fff;
+
+        .logo-wrap {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            .logo {
+                width: 60px;
+                height: 60px;
+                border-radius: 5px;
+            }
+            .desc {
+                margin-left: 8px;
+                b {
+                    font-size: 18px;
+                    color: rgb(51, 51, 51);
+                }
+                p {
+                    margin-top: 10px;
+                    font-size: 14px;
+                    color: rgb(117, 106, 106);
+                }
+            }
+            .bold {
+                color: red;
+                font-size: 18px;
+            }
+        }
+
+        .slogan {
+            font-size: 36px;
+            width: 100%;
+            text-align: center;
+            color: rgb(117, 106, 106);
+        }
+        .img-box {
+            width: 75px;
+            position: relative;
+            text-align: center;
+            .img-download {
+                width: 75px;
+                height: 75px;
+                margin-bottom: 5px;
+            }
+            p {
+                font-weight: bold;
+            }
+        }
+    }
+    .features {
+        display: flex;
+        padding: 10px;
+        flex-wrap: wrap;
+        .item {
+            margin: 20px 0;
+            .img {
+                width: 40px;
+                height: 40px;
+                float: left;
+                margin-right: 10px;
+            }
+            .title {
+                font-size: 16px;
+            }
+            .desc {
+                font-size: 14px;
+                margin-top: 5px;
+                color: rgb(136, 136, 136);
+            }
+        }
+        .f1,.f3 {
+            width: 100%;
+        }
+        .f2,.f4 {
+            width: 100%;
+        }
+    }
+
+    .footer {
+        display: flex;
+        padding: 20px;
+        justify-content: center;
+        color: rgb(185, 185, 185);
+        align-items: center;
+        font-size: 14px;
+        p {
+            margin: 0 10px;
+            a {
+                color: #b9b9b9;
+            }
         }
     }
 }
