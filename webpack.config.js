@@ -10,12 +10,15 @@ module.exports = {
     },
     module: {
         rules: [
-
+            {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader'
+            },
             {
                 test: /\.(scss)$/,
-                    use: [{
-                        // inject CSS to page
-                        loader: 'style-loader'
+                use: [{
+                    // inject CSS to page
+                    loader: 'style-loader'
                     }, {
                         // translates CSS into CommonJS modules
                         loader: 'css-loader'
@@ -56,7 +59,7 @@ module.exports = {
         port: 9000,
         host: '0.0.0.0',
         filename: 'bundle.js',
-        liveReload: false,
+        liveReload: true,
         hot: true
     },
 };
