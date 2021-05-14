@@ -9,7 +9,6 @@ body {
 }
 .main {
     margin: 0 auto;
-    background: #fff;
     width: 1024px;
 
     .header {
@@ -90,6 +89,7 @@ body {
         }
     }
     .features {
+        background: #fff;
         display: flex;
         padding: 10px;
         flex-wrap: wrap;
@@ -120,6 +120,7 @@ body {
     }
 
     .footer {
+        background: #fff;
         display: flex;
         padding: 20px;
         justify-content: center;
@@ -127,7 +128,7 @@ body {
         align-items: center;
         font-size: 14px;
         p {
-            margin: 0 80px;
+            margin: 0 40px;
             a {
                 color: #b9b9b9;
             }
@@ -138,8 +139,6 @@ body {
 
 
 .main-mobile {
-
-    width: 100%;
     max-width: 440px;
     .bg {
         width: 100%;
@@ -215,6 +214,7 @@ body {
                 height: 40px;
                 float: left;
                 margin-right: 10px;
+                margin-bottom: 10px;
             }
             .title {
                 font-size: 16px;
@@ -232,19 +232,21 @@ body {
             width: 100%;
         }
     }
-
-    .footer {
-        display: flex;
-        padding: 20px;
-        justify-content: center;
-        color: rgb(185, 185, 185);
-        align-items: center;
-        font-size: 14px;
-        p {
-            margin: 0 10px;
-            a {
-                color: #b9b9b9;
-            }
+}
+.footer-mobile {
+    max-width: 470px;
+    margin: 0 auto;
+    display: flex;
+    padding: 20px 0;
+    justify-content: center;
+    color: rgb(185, 185, 185);
+    align-items: center;
+    font-size: 14px;
+    background: #fff;
+    p {
+        margin: 0 5px;
+        a {
+            color: #b9b9b9;
         }
     }
 }

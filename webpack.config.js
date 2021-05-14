@@ -67,6 +67,16 @@ module.exports = {
             template: "public/mobile.html",
             filename: "mobile.html"
         }),
+        new HtmlWebpackPlugin({
+            inject: "body",
+            template: "public/service.html",
+            filename: "service.html"
+        }),
+        new HtmlWebpackPlugin({
+            inject: "body",
+            template: "public/privacy.html",
+            filename: "privacy.html"
+        }),
         new CopyPlugin({
             patterns: [
                 { from: "public/static", to: "static" },
